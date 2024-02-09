@@ -12,22 +12,22 @@ obj = customer_model()
 def customer_get_all_controller():
     return obj.customer_get_all_model()
 
-@app.route("/user/add", methods=["POST"])
+@app.route("/customer", methods=["POST"])
 # @auth.token_auth()
-def costumer_add_controller():
-    return obj.costumer_add_model(request.form)
+def customer_add_controller():
+    return obj.customer_add_model(request.form)
 
-@app.route("/user/update", methods=["PUT"])
-def costumer_update_controller():
-    return obj.costumer_update_model(request.form)
+@app.route("/customer", methods=["PUT"])
+def customer_update_controller():
+    return obj.customer_update_model(request.form)
 
-@app.route("/user/delete/<id>", methods=["DELETE"])
-def costumer_delete_controller(id):
-    return obj.costumer_delete_model(id)
+@app.route("/customer/<id>", methods=["DELETE"])
+def customer_delete_controller(id):
+    return obj.customer_delete_model(id)
 
-@app.route("/user/patch/<id>", methods=["PATCH"])
-def costumer_patch_controller(id):
-    return obj.costumer_patch_model(request.form, id)
+@app.route("/customer/patch/<id>", methods=["PATCH"])
+def customer_patch_controller(id):
+    return obj.customer_patch_model(request.form, id)
 
 # @app.route("/user/all/limit/<limit>/page/<page>", methods=["GET"])
 # def user_pagination_controller(limit, page):
