@@ -17,9 +17,9 @@ def customer_get_all_controller():
 def customer_add_controller():
     return obj.customer_add_model(request.form)
 
-@app.route("/customer", methods=["PUT"])
-def customer_update_controller():
-    return obj.customer_update_model(request.form)
+@app.route("/customer/<id>", methods=["PUT"])
+def customer_update_controller(id):
+    return obj.customer_update_model(request.form ,id)
 
 @app.route("/customer/<id>", methods=["DELETE"])
 def customer_delete_controller(id):

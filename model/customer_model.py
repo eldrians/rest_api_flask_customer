@@ -26,15 +26,15 @@ class customer_model():
             return make_response({"message": "No data found"}, 204)
         
     def customer_add_model(self, data):
-        query = "INSERT INTO customers(name, instagram, fav_color) VALUES (%s, %s, %s)"
-        values = (data['name'], data['instagram'], data['fav_color'])
+        query = "INSERT INTO customers(name, username_ig, fav_color) VALUES (%s, %s, %s)"
+        values = (data['name'], data['username_ig'], data['fav_color'])
 
         self.cur.execute(query, values)
         return make_response({"message": "Customer successfully created"}, 201)
     
-    def customer_update_model(self, data):
-        query = "UPDATE customers SET name=%s, instagram=%s, fav_color=%s"
-        values = (data['name'], data['instagram'], data['fav_color'])
+    def customer_update_model(self, data, id):
+        query = "UPDATE customers SET name=%s, username_ig=%s, fav_color=%s"
+        values = (data['name'], data['username_ig'], data['fav_color'])
 
         self.cur.execute(query, values)
         if self.cur.rowcount>0:
